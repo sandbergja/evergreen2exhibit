@@ -70,7 +70,9 @@ for book in books:
 				data[i]['uri'] = link.get('href')
 				break
 
-		data[i]['date-cataloged'] = book.find(ATOM + 'updated').text
+		date_cat = book.find(ATOM + 'updated')
+                if date_cat is not None:
+		        data[i]['date-cataloged'] = date_cat.text
 
 		isbns = book.findall(DC + 'identifier')
 		if not isbns:
