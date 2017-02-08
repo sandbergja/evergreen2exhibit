@@ -71,8 +71,8 @@ for book in books:
 				break
 
 		date_cat = book.find(ATOM + 'updated')
-                if date_cat is not None:
-		        data[i]['date-cataloged'] = date_cat.text
+		if date_cat is not None:
+			data[i]['date-cataloged'] = date_cat.text
 
 		isbns = book.findall(DC + 'identifier')
 		if not isbns:
